@@ -1,4 +1,4 @@
-# GH survey analysis
+# Survey analysis using Qualtrics data
 
 library(reshape2)
 library(tidyverse)
@@ -9,7 +9,7 @@ library(wesanderson)
 #Note: installed "wesanderson" color package
 #http://www.sthda.com/english/wiki/ggplot2-colors-how-to-change-colors-automatically-and-manually
 
-setwd("~/Strategic plan/2021 GH survey")
+setwd()
 
 data <- read.csv("qualtricsdata_raw.csv",header = TRUE) 
 str(data)
@@ -177,7 +177,7 @@ focus_plot + geom_col() +
 
 ggsave(filename="plot_focus.png",plot=last_plot())
 
-#Q4_3. Actively participating in GH: agree/disagree
+#Q4_3. Actively participating in program: agree/disagree
 
 table(data$Q4_3)
 
@@ -215,7 +215,7 @@ particip_plot + geom_col() +
 
 ggsave(filename="plot_particip.png",plot=last_plot())
 
-#Q4_4. Previously participated in GH: agree/disagree
+#Q4_4. Previously participated in program: agree/disagree
 
 table(data$Q4_4)
 
@@ -253,7 +253,7 @@ prevpart_plot + geom_col() +
 
 ggsave(filename="plot_prevpart.png",plot=last_plot())
 
-#Q4_5. Making GH more of a priority: agree/disagree
+#Q4_5. Making program more of a priority: agree/disagree
 
 table(data$Q4_5)
 
@@ -291,7 +291,7 @@ priority_plot + geom_col() +
 
 ggsave(filename="plot_priority.png",plot=last_plot())
 
-#Q4_6. GH important for advancing: agree/disagree
+#Q4_6. Program important for advancing career: agree/disagree
 
 table(data$Q4_6)
 
@@ -329,7 +329,7 @@ advance_plot + geom_col() +
 
 ggsave(filename="plot_advance.png",plot=last_plot())
 
-#Q5 -  For GH work, I have enough...
+#Q5 -  For this work, I have enough...
 
 #Q5_1 funding: agree/disagree
 
@@ -427,7 +427,7 @@ table(data$Q5_6)
 interncollab <- data.frame(table(data$Q5_6))
 interncollab
 
-#Q5_7. external collab: agree/disagree
+#Q5_7. external collaborations: agree/disagree
 
 table(data$Q5_7)
 
@@ -733,7 +733,6 @@ prev_funding_plot + geom_col() +
               plot.title=element_text(size=18,face="bold"))
 
 ggsave(filename="plot_prevfund.png",plot=last_plot())
-
 
 #Q10 - I have... - EXCLUDE
 
